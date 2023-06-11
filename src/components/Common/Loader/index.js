@@ -1,13 +1,13 @@
-import { CircularProgress } from "@mui/material";
-import{withStyles} from "@mui/styles";
+import CircularProgress from '@mui/material/CircularProgress';
+import { styled } from '@mui/system';
+
 import React from "react";
 import "./styles.css";
 
-const CustomCircularProgress = withStyles((theme) => ({
-  root: {
-    color: '#9900ff', // Replace 'red' with your desired color
-  },
-}))(CircularProgress);
+const CustomCircularProgress = styled(CircularProgress)(({ theme }) => ({
+  color: '#9900ff', // Replace 'red' with your desired color
+}));
+
 
 function Loader() {
   return (
@@ -18,6 +18,7 @@ function Loader() {
 }
 
 export default Loader;
+
 
 
 
