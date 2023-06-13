@@ -80,6 +80,12 @@
   .price-chip chip-red{
     display: none !important;
   }
+  .one{
+    display: none !important;
+  }
+  .two{
+    display:none !important;
+  }
 
 
 
