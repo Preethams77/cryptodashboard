@@ -34,7 +34,7 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
 
   return (
     <div className="coins-flex">
-      <p>Crypto 1</p>
+      <p className="one">Crypto 1</p>
       <Select
         sx={styles}
         value={crypto1}
@@ -49,7 +49,7 @@ function SelectCoins({ crypto1, crypto2, handleCoinChange }) {
             </MenuItem>
           ))}
       </Select>
-      <p>Crypto 2</p>
+      <p className="one">Crypto 2</p>
       <Select
         sx={styles}
         value={crypto2}
