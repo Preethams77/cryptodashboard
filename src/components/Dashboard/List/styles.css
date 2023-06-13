@@ -47,7 +47,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .desktop-td-mkt {
     display: none;
   }
@@ -55,4 +55,33 @@
   .mobile-td-mkt {
     display: block;
   }
+  .list-row td,.td-p{
+    font-size: 0.2rem !important;
+  }
+  .td-info{
+    width:4rem !important;
+  }
+ 
+  .icon-chip{
+    
+    display: none !important;
+  }
+  .icon-chip chip-red{
+    display:none !important;
+  }
+  
+  
 }
+@media only screen and (max-width:850px){
+
+  .price-chip{
+    display: none !important;
+  }
+  .price-chip chip-red{
+    display: none !important;
+  }
+
+
+
+}
+
