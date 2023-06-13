@@ -84,4 +84,26 @@
 
 
 }
+@media only screen and (max-width:600px){
+
+  .info-flex{
+    margin:0rem !important;
+  }
+  .select-days {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0rem !important;
+  }
+  .info-flex {
+    display: flex !important;
+    justify-content: center!important;
+    align-items: center !important;
+    gap: 1rem !important ;
+    margin: 1.5rem !important;
+  }
+
+
+
+}
 
