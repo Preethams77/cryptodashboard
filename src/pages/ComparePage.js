@@ -62,25 +62,52 @@ function ComparePage() {
     }
   }
 
-  const handleCoinChange = async (event, isCoin2) => {
+  // const handleCoinChange = async (event, isCoin2) => {
+  //   setIsLoading(true);
+  //   if (isCoin2) {
+  //     setCrypto2(event.target.value);
+  //     const data = await getCoinData(event.target.value);
+  //     coinObject(setCrypto2Data, data);
+  //     const prices1 = await getCoinPrices(crypto1, days, priceType);
+  //     const prices2 = await getCoinPrices(crypto2, days, priceType);
+  //     if (prices1.length > 0 && prices2.length > 0) {
+  //       //   settingChartData(setChartData, prices);
+  //       console.log("BOTH PRICES FETCHED", prices1, prices2);
+  //       setIsLoading(false);
+  //     }
+  //   } else {
+  //     setCrypto1(event.target.value);
+  //     const data = await getCoinData(event.target.value);
+  //     coinObject(setCrypto1Data, data);
+  //   }
+  // };
+
+    const handleCoinChange = async (event, isCoin2) => {
     setIsLoading(true);
+    const newCoin = event.target.value;
+  
     if (isCoin2) {
-      setCrypto2(event.target.value);
-      const data = await getCoinData(event.target.value);
+      setCrypto2(newCoin);
+      const data = await getCoinData(newCoin);
       coinObject(setCrypto2Data, data);
-      const prices1 = await getCoinPrices(crypto1, days, priceType);
-      const prices2 = await getCoinPrices(crypto2, days, priceType);
-      if (prices1.length > 0 && prices2.length > 0) {
-        //   settingChartData(setChartData, prices);
-        console.log("BOTH PRICES FETCHED", prices1, prices2);
-        setIsLoading(false);
-      }
     } else {
-      setCrypto1(event.target.value);
-      const data = await getCoinData(event.target.value);
+      setCrypto1(newCoin);
+      const data = await getCoinData(newCoin);
       coinObject(setCrypto1Data, data);
     }
+  
+    // Fetch latest prices after updating coin selection
+    const prices1 = await getCoinPrices(isCoin2 ? crypto1 : newCoin, days, priceType);
+    const prices2 = await getCoinPrices(isCoin2 ? newCoin : crypto2, days, priceType);
+  
+    if (prices1.length > 0 && prices2.length > 0) {
+      settingChartData(setChartData, prices1, prices2);
+      console.log("BOTH PRICES FETCHED", prices1, prices2);
+    }
+  
+    setIsLoading(false);
   };
+  
 
   return (
     <div>
